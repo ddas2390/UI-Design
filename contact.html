@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Logo" style="width: 50px; height: 50px;"></a>
+        </div>
+        <div class="container">
+            <nav>
+                <div id="menuIcon">
+                    <div class="menuIconLine"></div>
+                    <div class="menuIconLine"></div>
+                    <div class="menuIconLine"></div>
+                </div>
+                <ul class="navLinks">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="contact">
+        <div class="container">
+            <div class="row">
+                <h2>Contact Me</h2>
+                <form action="submit-form.php" method="POST">
+                    <div class="form-row">
+                        <label for="name">Name:</label>
+                        <input type="text" name="name" id="name" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email:</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" name="phone" id="phone" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="message">Message:</label>
+                        <textarea name="message" id="message" required></textarea>
+                    </div>
+                    <div class="form-row">
+                        <input type="submit" value="Send">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-social">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <p>&copy; 2023 My Personal Blog. Picture credits https://pixabay.com, all rights reserved. Name: Debolina Das. Student ID: 219669550</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

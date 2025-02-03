@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Debolina's Personal Portfolio</title>
+	<link rel="stylesheet" href="style.css">
+    <!-- including social media icons in the footer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+		.banner {
+			position: relative;
+			height: 350px;
+			overflow: hidden;
+		}
+		
+		.banner img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
+		}
+		
+		.banner img.active {
+			opacity: 1;
+		}
+		
+		.banner .caption {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: 5px;
+			background-color: rgba(0, 0, 0, 0.5);
+			color: white;
+			font-size: 24px;
+			text-align: center;
+			opacity: 0;
+			transition: opacity 1s ease-in-out;
+		}
+		
+		.banner .caption.active {
+			opacity: 1;
+		}
+	</style>
+
+    <script src="script.js"></script>
+</head>
+<body>
+	<header>
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Logo" style="width: 50px; height: 50px;"></a>
+        </div>
+		<nav>
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="skills.html">Skills</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+		</nav>
+        <div class="banner">
+            <img class="active" src="banner1.jpg" alt="Banner 1">
+            <img src="banner2.jpg" alt="Banner 2">
+            <img src="banner3.jpg" alt="Banner 3">
+            <div class="caption active">Technology</div>
+            <div class="caption">Innovation</div>
+            <div class="caption">and more...</div>
+        </div>
+        <div class="jumbotron">
+            <h1 class="display-4"><strong>Hello, I'm Debolina Das. Welcome to my site!</strong></h1>
+            <p class="lead">A software developer and web programmer in the making...</p>
+            <!-- images and captions below -->
+            <div class="row">
+            </div>
+            <hr class="my-4">
+            <p>Technology driven design solutions to enhance your user interface with HTML, CSS and JavaScript with user-centered design
+                and backend web server using PHP and Node.js.</p>
+            <a class="btn btn-primary btn-lg" href="about.html" role="button">Learn more</a>
+        </div>
+        <button id="menuIcon" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>          
+	</header>
+	<main>
+		<section class="container">
+			<h2>About Me</h2>
+			<p>I'm a Computer Science degree student at Algoma U.</p>
+		</section>
+		<section class="container">
+			<h2>My Skills</h2>
+			<p>My skills and proficiency are in the area of Web Development, Computer Programming, Database programming</p>
+		</section>
+		<section class="container">
+			<h2>My Projects</h2>
+			<p>A list of my projects include webs applications such as website design, shopping cart, scientific calculator, soccer league, traffic management system</p>
+		</section>
+	</main>
+	<footer>
+        <div class="footer-social">
+            <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.twitter.com"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <p>&copy; 2023 My Personal Blog. Picture credits https://pixabay.com, all rights reserved. Name: Debolina Das. Student ID: 219669550</p>
+	</footer>
+    <script>
+		// Banner Rotational Snippet
+		const images = document.querySelectorAll('.banner img');
+		const captions = document.querySelectorAll('.banner .caption');
+		let activeIndex = 0;
+		
+		function rotateBanner() {
+			// Hide the current active image and caption
+			images[activeIndex].classList.remove('active');
+			captions[activeIndex].classList.remove('active');
+			
+			// Calculate the index of the next image and caption
+			activeIndex = (activeIndex + 1) % images.length;
+			
+			// Show the next image and caption
+			images[activeIndex].classList.add('active');
+			captions[activeIndex].classList.add('active');
+		}
+		
+		// Start rotating the banner every 3 seconds
+		setInterval(rotateBanner, 3000);
+	</script>
+</body>
+</html>
